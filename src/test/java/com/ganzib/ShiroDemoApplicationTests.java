@@ -1,4 +1,4 @@
-package com.ganzib.shirodemo;
+package com.ganzib;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

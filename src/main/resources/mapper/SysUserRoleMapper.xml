@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ganzib.dao.SysUserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.ganzib.entity.SysUserRole">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ganzib.entity.SysUserRole">
+    insert into sys_user_role (id, user_id, role_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}
+      )
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, user_id, role_id
+    from sys_user_role
+  </select>
+  <resultMap id="BaseResultMap" type="com.ganzib.entity.SysUserRole">
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="rid" jdbcType="BIGINT" property="rid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ganzib.entity.SysUserRole">
+    insert into sys_user_role (`uid`, rid)
+    values (#{uid,jdbcType=BIGINT}, #{rid,jdbcType=BIGINT})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select `uid`, rid
+    from sys_user_role
+  </select>
+  <resultMap id="BaseResultMap" type="com.ganzib.entity.SysUserRole">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ganzib.entity.SysUserRole">
+    insert into sys_user_role (id, user_id, role_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}
+      )
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, user_id, role_id
+    from sys_user_role
+  </select>
+  <resultMap id="BaseResultMap" type="com.ganzib.entity.SysUserRole">
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="rid" jdbcType="BIGINT" property="rid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.ganzib.entity.SysUserRole">
+    insert into sys_user_role (`uid`, rid)
+    values (#{uid,jdbcType=BIGINT}, #{rid,jdbcType=BIGINT})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select `uid`, rid
+    from sys_user_role
+  </select>
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.SysUserRole">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="user_id" jdbcType="BIGINT" property="userId" />
+    <result column="role_id" jdbcType="BIGINT" property="roleId" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.entity.SysUserRole">
+    insert into sys_user_role (id, user_id, role_id
+      )
+    values (#{id,jdbcType=BIGINT}, #{userId,jdbcType=BIGINT}, #{roleId,jdbcType=BIGINT}
+      )
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, user_id, role_id
+    from sys_user_role
+  </select>
+  <resultMap id="BaseResultMap" type="com.example.demo.entity.SysUserRole">
+    <result column="uid" jdbcType="BIGINT" property="uid" />
+    <result column="rid" jdbcType="BIGINT" property="rid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.example.demo.entity.SysUserRole">
+    insert into sys_user_role (`uid`, rid)
+    values (#{uid,jdbcType=BIGINT}, #{rid,jdbcType=BIGINT})
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select `uid`, rid
+    from sys_user_role
+  </select>
+</mapper>
