@@ -7,5 +7,5 @@ package com.ganzib.service;
  * Date: 2018-12-18
  * Time: 13:52
  */
-public class SysUserRoleService {
+public interface SysUserRoleService {
 }

@@ -7,5 +7,5 @@ package com.ganzib.service;
  * Date: 2018-12-18
  * Time: 13:51
  */
-public class SysRolePermission {
+public interface SysRolePermissionService {
 }

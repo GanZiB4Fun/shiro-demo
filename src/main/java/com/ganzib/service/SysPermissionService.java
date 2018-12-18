@@ -1,5 +1,7 @@
 package com.ganzib.service;
 
+import java.util.Set;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -7,5 +9,6 @@ package com.ganzib.service;
  * Date: 2018-12-18
  * Time: 13:54
  */
-public class SysPermissionService {
+public interface SysPermissionService {
+    Set<String> getPermissionByUserId(Long id);
 }

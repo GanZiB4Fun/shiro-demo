@@ -1,5 +1,7 @@
 package com.ganzib.service;
 
+import com.ganzib.entity.SysUser;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -7,5 +9,6 @@ package com.ganzib.service;
  * Date: 2018-12-18
  * Time: 13:51
  */
-public class SysUserService {
+public interface SysUserService {
+    SysUser findByUsername(String username);
 }

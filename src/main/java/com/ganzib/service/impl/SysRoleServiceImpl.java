@@ -1,5 +1,8 @@
 package com.ganzib.service.impl;
 
+import com.ganzib.service.SysRoleService;
+import org.springframework.stereotype.Service;
+
 /**
  * Created with IntelliJ IDEA.
  * Description:
@@ -7,5 +10,6 @@ package com.ganzib.service.impl;
  * Date: 2018-12-18
  * Time: 13:54
  */
-public class SysRoleServiceImpl {
+@Service
+public class SysRoleServiceImpl implements SysRoleService {
 }
