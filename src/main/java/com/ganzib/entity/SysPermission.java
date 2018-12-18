@@ -4,7 +4,6 @@ import javax.persistence.*;
 
 @Table(name = "sys_permission")
 public class SysPermission {
-    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
@@ -17,6 +16,11 @@ public class SysPermission {
      * url描述
      */
     private String name;
+
+    /**
+     * 权限
+     */
+    private String perms;
 
     /**
      * @return id
@@ -66,5 +70,23 @@ public class SysPermission {
      */
     public void setName(String name) {
         this.name = name == null ? null : name.trim();
+    }
+
+    /**
+     * 获取权限
+     *
+     * @return perms - 权限
+     */
+    public String getPerms() {
+        return perms;
+    }
+
+    /**
+     * 设置权限
+     *
+     * @param perms 权限
+     */
+    public void setPerms(String perms) {
+        this.perms = perms == null ? null : perms.trim();
     }
 }

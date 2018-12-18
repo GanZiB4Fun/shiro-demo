@@ -15,7 +15,6 @@ import tk.mybatis.mapper.entity.Example;
 
 import java.util.List;
 import java.util.Set;
-import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -43,15 +42,15 @@ public class SysPermissionServiceImpl implements SysPermissionService {
         example.createCriteria().andEqualTo("uid",id);
         SysUserRole sysUserRole = sysUserRoleMapper.selectOneByExample(example);
         example = new Example(SysRole.class);
-        example.createCriteria().andEqualTo("rid",sysUserRole.getRid());
+        example.createCriteria().andEqualTo("id",sysUserRole.getRid());
         SysRole sysRole = sysRoleMapper.selectOneByExample(example);
         example = new Example(SysRolePermission.class);
-        example.createCriteria().andEqualTo("id",sysRole.getId());
+        example.createCriteria().andEqualTo("rid",sysRole.getId());
         SysRolePermission sysRolePermission = sysRolePermissionMapper.selectOneByExample(example);
         example = new Example(SysPermission.class);
-        example.createCriteria().andEqualTo("pid",sysRolePermission.getPid());
+        example.createCriteria().andEqualTo("id",sysRolePermission.getPid());
         List<SysPermission> sysPermissions = sysPermissionMapper.selectByExample(example);
-        return sysPermissions.stream().map(SysPermission::getUrl).collect(Collectors.toSet());
+        return sysPermissions.stream().map(SysPermission::getPerms).collect(Collectors.toSet());
     }
 
 }
