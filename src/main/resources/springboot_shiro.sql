@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : 本地
  Source Server Type    : MySQL
  Source Server Version : 50724
- Source Host           : 127.0.0.1:3306
+ Source Host           : localhost:3306
  Source Schema         : springboot_shiro
 
  Target Server Type    : MySQL
  Target Server Version : 50724
  File Encoding         : 65001
 
- Date: 18/12/2018 13:52:52
+ Date: 18/12/2018 22:53:39
 */
 
 SET NAMES utf8mb4;
@@ -23,16 +23,17 @@ SET FOREIGN_KEY_CHECKS = 0;
 DROP TABLE IF EXISTS `sys_permission`;
 CREATE TABLE `sys_permission`  (
   `id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `url` varchar(256) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'url地址',
+  `url` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'url地址',
   `name` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT 'url描述',
+  `perms` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NULL DEFAULT NULL COMMENT '权限',
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of sys_permission
 -- ----------------------------
-INSERT INTO `sys_permission` VALUES (1, '/user', 'usermanager');
-INSERT INTO `sys_permission` VALUES (2, '/test', 'test');
+INSERT INTO `sys_permission` VALUES (1, '/user', 'usermanager', NULL);
+INSERT INTO `sys_permission` VALUES (2, '/test', 'test', NULL);
 
 -- ----------------------------
 -- Table structure for sys_role
