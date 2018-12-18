@@ -1,118 +1,165 @@
 package com.ganzib.entity;
 
-import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.*;
 
-public class SysUser implements Serializable {
-    private Long userId;
+@Table(name = "sys_user")
+public class SysUser {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private String username;
+    /**
+     * 用户昵称
+     */
+    private String nickname;
 
-    private String password;
-
-    private String salt;
-
+    /**
+     * 邮箱|登录帐号
+     */
     private String email;
 
-    private String mobile;
+    /**
+     * 密码
+     */
+    private String pswd;
 
-    private Byte status;
-
-    private Long createUserId;
-
+    /**
+     * 创建时间
+     */
+    @Column(name = "create_time")
     private Date createTime;
 
-    private static final long serialVersionUID = 1L;
+    /**
+     * 最后登录时间
+     */
+    @Column(name = "last_login_time")
+    private Date lastLoginTime;
 
-    public Long getUserId() {
-        return userId;
+    /**
+     * 1:有效，0:禁止登录
+     */
+    private Long status;
+
+    /**
+     * @return id
+     */
+    public Long getId() {
+        return id;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
+    /**
+     * @param id
+     */
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    /**
+     * 获取用户昵称
+     *
+     * @return nickname - 用户昵称
+     */
+    public String getNickname() {
+        return nickname;
     }
 
-    public void setUsername(String username) {
-        this.username = username == null ? null : username.trim();
+    /**
+     * 设置用户昵称
+     *
+     * @param nickname 用户昵称
+     */
+    public void setNickname(String nickname) {
+        this.nickname = nickname == null ? null : nickname.trim();
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password == null ? null : password.trim();
-    }
-
-    public String getSalt() {
-        return salt;
-    }
-
-    public void setSalt(String salt) {
-        this.salt = salt == null ? null : salt.trim();
-    }
-
+    /**
+     * 获取邮箱|登录帐号
+     *
+     * @return email - 邮箱|登录帐号
+     */
     public String getEmail() {
         return email;
     }
 
+    /**
+     * 设置邮箱|登录帐号
+     *
+     * @param email 邮箱|登录帐号
+     */
     public void setEmail(String email) {
         this.email = email == null ? null : email.trim();
     }
 
-    public String getMobile() {
-        return mobile;
+    /**
+     * 获取密码
+     *
+     * @return pswd - 密码
+     */
+    public String getPswd() {
+        return pswd;
     }
 
-    public void setMobile(String mobile) {
-        this.mobile = mobile == null ? null : mobile.trim();
+    /**
+     * 设置密码
+     *
+     * @param pswd 密码
+     */
+    public void setPswd(String pswd) {
+        this.pswd = pswd == null ? null : pswd.trim();
     }
 
-    public Byte getStatus() {
-        return status;
-    }
-
-    public void setStatus(Byte status) {
-        this.status = status;
-    }
-
-    public Long getCreateUserId() {
-        return createUserId;
-    }
-
-    public void setCreateUserId(Long createUserId) {
-        this.createUserId = createUserId;
-    }
-
+    /**
+     * 获取创建时间
+     *
+     * @return create_time - 创建时间
+     */
     public Date getCreateTime() {
         return createTime;
     }
 
+    /**
+     * 设置创建时间
+     *
+     * @param createTime 创建时间
+     */
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", userId=").append(userId);
-        sb.append(", username=").append(username);
-        sb.append(", password=").append(password);
-        sb.append(", salt=").append(salt);
-        sb.append(", email=").append(email);
-        sb.append(", mobile=").append(mobile);
-        sb.append(", status=").append(status);
-        sb.append(", createUserId=").append(createUserId);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+    /**
+     * 获取最后登录时间
+     *
+     * @return last_login_time - 最后登录时间
+     */
+    public Date getLastLoginTime() {
+        return lastLoginTime;
+    }
+
+    /**
+     * 设置最后登录时间
+     *
+     * @param lastLoginTime 最后登录时间
+     */
+    public void setLastLoginTime(Date lastLoginTime) {
+        this.lastLoginTime = lastLoginTime;
+    }
+
+    /**
+     * 获取1:有效，0:禁止登录
+     *
+     * @return status - 1:有效，0:禁止登录
+     */
+    public Long getStatus() {
+        return status;
+    }
+
+    /**
+     * 设置1:有效，0:禁止登录
+     *
+     * @param status 1:有效，0:禁止登录
+     */
+    public void setStatus(Long status) {
+        this.status = status;
     }
 }

@@ -1,74 +1,70 @@
 package com.ganzib.entity;
 
-import java.io.Serializable;
-import java.util.Date;
+import javax.persistence.*;
 
-public class SysRole implements Serializable {
-    private Long roleId;
+@Table(name = "sys_role")
+public class SysRole {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    private String roleName;
+    /**
+     * 角色名称
+     */
+    private String name;
 
-    private String remark;
+    /**
+     * 角色类型
+     */
+    private String type;
 
-    private Long createUserId;
-
-    private Date createTime;
-
-    private static final long serialVersionUID = 1L;
-
-    public Long getRoleId() {
-        return roleId;
+    /**
+     * @return id
+     */
+    public Long getId() {
+        return id;
     }
 
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
+    /**
+     * @param id
+     */
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public String getRoleName() {
-        return roleName;
+    /**
+     * 获取角色名称
+     *
+     * @return name - 角色名称
+     */
+    public String getName() {
+        return name;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName == null ? null : roleName.trim();
+    /**
+     * 设置角色名称
+     *
+     * @param name 角色名称
+     */
+    public void setName(String name) {
+        this.name = name == null ? null : name.trim();
     }
 
-    public String getRemark() {
-        return remark;
+    /**
+     * 获取角色类型
+     *
+     * @return type - 角色类型
+     */
+    public String getType() {
+        return type;
     }
 
-    public void setRemark(String remark) {
-        this.remark = remark == null ? null : remark.trim();
-    }
-
-    public Long getCreateUserId() {
-        return createUserId;
-    }
-
-    public void setCreateUserId(Long createUserId) {
-        this.createUserId = createUserId;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", roleId=").append(roleId);
-        sb.append(", roleName=").append(roleName);
-        sb.append(", remark=").append(remark);
-        sb.append(", createUserId=").append(createUserId);
-        sb.append(", createTime=").append(createTime);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+    /**
+     * 设置角色类型
+     *
+     * @param type 角色类型
+     */
+    public void setType(String type) {
+        this.type = type == null ? null : type.trim();
     }
 }

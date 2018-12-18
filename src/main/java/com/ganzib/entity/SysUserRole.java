@@ -1,51 +1,52 @@
 package com.ganzib.entity;
 
-import java.io.Serializable;
+import javax.persistence.*;
 
-public class SysUserRole implements Serializable {
-    private Long id;
+@Table(name = "sys_user_role")
+public class SysUserRole {
+    /**
+     * 用户ID
+     */
+    private Long uid;
 
-    private Long userId;
+    /**
+     * 角色ID
+     */
+    private Long rid;
 
-    private Long roleId;
-
-    private static final long serialVersionUID = 1L;
-
-    public Long getId() {
-        return id;
+    /**
+     * 获取用户ID
+     *
+     * @return uid - 用户ID
+     */
+    public Long getUid() {
+        return uid;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    /**
+     * 设置用户ID
+     *
+     * @param uid 用户ID
+     */
+    public void setUid(Long uid) {
+        this.uid = uid;
     }
 
-    public Long getUserId() {
-        return userId;
+    /**
+     * 获取角色ID
+     *
+     * @return rid - 角色ID
+     */
+    public Long getRid() {
+        return rid;
     }
 
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
-
-    public Long getRoleId() {
-        return roleId;
-    }
-
-    public void setRoleId(Long roleId) {
-        this.roleId = roleId;
-    }
-
-    @Override
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append(getClass().getSimpleName());
-        sb.append(" [");
-        sb.append("Hash = ").append(hashCode());
-        sb.append(", id=").append(id);
-        sb.append(", userId=").append(userId);
-        sb.append(", roleId=").append(roleId);
-        sb.append(", serialVersionUID=").append(serialVersionUID);
-        sb.append("]");
-        return sb.toString();
+    /**
+     * 设置角色ID
+     *
+     * @param rid 角色ID
+     */
+    public void setRid(Long rid) {
+        this.rid = rid;
     }
 }
