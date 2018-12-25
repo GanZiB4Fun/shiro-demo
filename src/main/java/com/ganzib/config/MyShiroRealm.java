@@ -1,7 +1,5 @@
 package com.ganzib.config;
 
-import com.ganzib.entity.SysPermission;
-import com.ganzib.entity.SysRole;
 import com.ganzib.entity.SysUser;
 import com.ganzib.service.SysPermissionService;
 import com.ganzib.service.SysUserService;
@@ -10,11 +8,8 @@ import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
 import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
-import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import javax.annotation.Resource;
-import java.util.List;
 import java.util.Set;
 
 /**

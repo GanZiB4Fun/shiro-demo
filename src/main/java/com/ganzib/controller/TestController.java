@@ -15,7 +15,7 @@ public class TestController {
     }
     @GetMapping("/test")
     public String test2(){
-       throw new RuntimeException("test");
+       return "test";
     }
 
     @RequiresPermissions("admin:test")
