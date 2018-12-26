@@ -1,7 +1,6 @@
 package com.ganzib.controller;
 
 import com.alibaba.fastjson.JSONObject;
-import com.ganzib.entity.SysUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.IncorrectCredentialsException;
@@ -11,6 +10,8 @@ import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;
 import org.apache.shiro.web.mgt.DefaultWebSecurityManager;
 import org.apache.shiro.web.session.mgt.DefaultWebSessionManager;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
@@ -26,6 +27,9 @@ import java.util.Collection;
 @RestController
 @RequestMapping("/api/sign")
 public class LoginController {
+
+    private Logger logger = LoggerFactory.getLogger(LoginController.class);
+
     /**
      * 登录方法
      * @return
@@ -37,6 +41,7 @@ public class LoginController {
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(nickname, pswd);
         try {
+            logger.info("dasdasdasdasdadsa");
             subject.login(token);
             DefaultWebSecurityManager securityManager = (DefaultWebSecurityManager) SecurityUtils.getSecurityManager();
             DefaultWebSessionManager sessionManager = (DefaultWebSessionManager)securityManager.getSessionManager();
